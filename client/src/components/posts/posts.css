@@ -1,0 +1,13 @@
+.posts {
+    flex: 9;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.postsSorting{
+    height: 20px;
+    color: #51296e;
+    font-family:'Poppins', Courier, monospace;
+
+}

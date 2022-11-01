@@ -1,0 +1,52 @@
+.topnav {
+    width: 100%;
+    height: 60px;
+    background-color:white;
+    font-family:'Poppins', Courier, monospace;
+    color: #51296e;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.topnavLeft, .topnavRight {
+    flex: 4;
+    text-align: center;
+}
+.topnavLeft > img{
+    height: 40px;
+}
+.topnavCenter {
+flex: 5;
+text-align: center;
+}
+
+.topList{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.topImg {
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.topListItem {
+    margin-right: 25px;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.topProfile{
+font-size: 14px;
+font-family: 'Lora', Courier, monospace;
+
+}

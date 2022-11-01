@@ -1,0 +1,53 @@
+.submit{
+    padding-top: 50px;
+}
+.submitForm{
+    position:relative;
+}
+
+.submitFormGroup{
+    margin-left:150px;
+    display: flex;
+    align-items: center;
+}
+
+.submitIcon{
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.submitInput{
+    font-size: 30px;
+    border: none;
+    padding: 20px;
+    width: 70vw;
+}
+
+.submitInput:focus{
+    outline: none;
+}
+.submitText{
+    font-size: 20px;
+}
+.submitBtn{
+    position: absolute;
+    top:20px;
+    right: 50px;
+    color: white;
+    padding:10px;
+    border: 10px;
+    border-radius: 10px;;
+    background-color: #51296e;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submitImg{
+    margin-left: 15px;
+    width: 70vw;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
