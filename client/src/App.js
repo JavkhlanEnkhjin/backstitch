@@ -1,11 +1,11 @@
 import TopNav from "./components/topnav/TopNav";
-import Single from "./pages/single/Single";
 import Home from "./pages/home/Home";
 import Submit from "./pages/submit/Submit";
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+/* import Single from "./pages/single/Single"; */
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
 function App() {
@@ -19,7 +19,9 @@ function App() {
         <Route path="/login" element={user ? <home /> : <Login />} />
         <Route path="/submit" element={user ? <Submit /> : <Login />} />
         <Route path="/settings" element={user ? <Settings /> : <Login />} />
+        {/*
         <Route path="//post/:postId" element={<Single />} />
+        */}
       </Routes>
     </Router>
   );
