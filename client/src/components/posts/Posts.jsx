@@ -2,6 +2,7 @@ import "./posts.css";
 import Post from "../post/Post";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
+
 export default function Posts({ posts }) {
   const { user } = useContext(Context);
   return (

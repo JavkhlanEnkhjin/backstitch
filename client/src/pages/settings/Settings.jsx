@@ -15,10 +15,10 @@ export default function Settings() {
     dispatch({ type: "UPDATE_START" });
     const updatedUser = {
       userId: user._id,
-      //username,
       email,
       password,
     };
+    //
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
@@ -42,7 +42,6 @@ export default function Settings() {
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <span className="settingsUpdateTitle">Update your Account</span>
-          <span className="settingsDeleteTitle">Delete your Account</span>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile picture:</label>
@@ -62,12 +61,7 @@ export default function Settings() {
             />
           </div>
           <label>User name:</label>
-          <input
-            type="text"
-            placeholder={user.username}
-            disabled="true"
-            //onChange={e=>setUsername(e.target.value)}
-          />
+          <input type="text" placeholder={user.username} disabled="true" />
           <label>Email:</label>
           <input
             type="text"
@@ -91,7 +85,6 @@ export default function Settings() {
           )}
         </form>
       </div>
-
       <Sidebar />
     </div>
   );

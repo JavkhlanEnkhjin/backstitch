@@ -1,6 +1,6 @@
 const router = require("express").Router();
-//const User = require("../models/User");
 const Post = require("../models/Post");
+//const User = require("../models/User");
 
 // create new post
 router.post("/", async (req, res) => {
@@ -8,6 +8,22 @@ router.post("/", async (req, res) => {
   try {
     const savedPost = await newPost.save();
     res.status(200).json(savedPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//get all posts
+router.get("/", async (req, res) => {
+  const username = req.query.user;
+  try {
+    let posts;
+    if (username) {
+      posts = await Post.find({ username });
+    } else {
+      posts = await Post.find();
+    }
+    res.status(200).json(posts);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,8 +55,7 @@ router.put("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-*/
-}
+
 
 // delete post
 router.delete("/:id", async (req, res) => {
@@ -61,6 +76,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+
 // get post - not using
 {
   /* router.get("/:id", async (req, res) => {
@@ -74,19 +90,4 @@ router.delete("/:id", async (req, res) => {
 */
 }
 
-//get all posts
-router.get("/", async (req, res) => {
-  const username = req.query.user;
-  try {
-    let posts;
-    if (username) {
-      posts = await Post.find({ username });
-    } else {
-      posts = await Post.find();
-    }
-    res.status(200).json(posts);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 module.exports = router;
