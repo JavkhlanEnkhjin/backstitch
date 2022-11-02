@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
+
 // register
 router.post("/register", async (req, res) => {
   try {
@@ -22,14 +23,13 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
+    const validated = await bcrypt.compare(req.body.password, user.password);
     if (!user) {
       return res.status(400).json("Wrong login");
     }
-    const validated = await bcrypt.compare(req.body.password, user.password);
     if (!validated) {
       return res.status(400).json("Wrong login");
     }
-
     const { password, ...others } = user._doc;
     res.status(200).json(others);
   } catch (err) {

@@ -23,7 +23,6 @@ const handleSubmit = async (e) => {
 {
   setError(true);
 }
-  
 }
   return (
     <div className="register">
